@@ -1,18 +1,18 @@
 package com.saydullin.pexelsapp.ui.colors
 
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 
-private val LightThemeColors = lightColors(
+val LightThemeColors = lightColorScheme(
     primary = LightColors.Red,
     secondary = LightColors.LightGray,
     background = LightColors.White,
     onSurface = LightColors.Black,
-    onPrimary = LightColors.White,
+    onPrimary = LightColors.Black,
     onSecondary = LightColors.Black,
 )
 
-private val DarkThemeColors = darkColors(
+val DarkThemeColors = darkColorScheme(
     primary = DarkColors.Red,
     secondary = DarkColors.DarkGray,
     background = DarkColors.Black,
