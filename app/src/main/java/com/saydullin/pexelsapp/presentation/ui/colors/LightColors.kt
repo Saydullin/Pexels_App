@@ -1,4 +1,4 @@
-package com.saydullin.pexelsapp.ui.colors
+package com.saydullin.pexelsapp.presentation.ui.colors
 
 import androidx.compose.ui.graphics.Color
 

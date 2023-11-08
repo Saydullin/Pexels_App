@@ -1,4 +1,4 @@
-package com.saydullin.pexelsapp.ui.typegrophy
+package com.saydullin.pexelsapp.presentation.ui.typegrophy
 
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
