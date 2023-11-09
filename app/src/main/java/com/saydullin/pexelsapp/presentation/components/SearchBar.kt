@@ -1,4 +1,4 @@
-package com.saydullin.pexelsapp.presentation.screens.components
+package com.saydullin.pexelsapp.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -34,10 +34,11 @@ fun SearchBar(
     modifier: Modifier = Modifier,
     value: String = "",
     searchPlaceholder: String,
-    onSearchTextChanged: (String) -> Unit,
-    onSearchSubmit: (String) -> Unit
+    onSearchTextChanged: ((String) -> Unit)? = null,
+    onSearchSubmit: ((String) -> Unit)? = null,
 ) {
 
+    val cornerRadius = dimensionResource(R.dimen.corner_radius)
     val searchText = remember {
         mutableStateOf(value)
     }
@@ -54,7 +55,7 @@ fun SearchBar(
             value = searchText.value,
             onValueChange = {
                 searchText.value = it
-                onSearchTextChanged(it)
+                onSearchTextChanged?.invoke(it)
             },
             leadingIcon = {
                 Icon(
@@ -68,8 +69,8 @@ fun SearchBar(
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth()
-                .background(colorScheme.secondary, shape = RoundedCornerShape(50.dp))
-                .clip(RoundedCornerShape(50.dp))
+                .background(colorScheme.secondary, shape = RoundedCornerShape(cornerRadius))
+                .clip(RoundedCornerShape(cornerRadius))
                 .border(0.dp, Color.Transparent),
             colors = TextFieldDefaults.textFieldColors(
                 containerColor = colorScheme.secondary,
@@ -83,7 +84,7 @@ fun SearchBar(
                 )
             },
             keyboardActions = KeyboardActions(
-                onSearch = { onSearchSubmit(searchText.value) }
+                onSearch = { onSearchSubmit?.invoke(searchText.value) }
             )
         )
         if (searchText.value.isNotEmpty()) {
