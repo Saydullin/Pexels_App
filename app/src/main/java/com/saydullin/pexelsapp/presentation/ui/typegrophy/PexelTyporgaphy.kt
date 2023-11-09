@@ -19,7 +19,7 @@ val PexelTypography = Typography(
     labelMedium = TextStyle(
         fontFamily = MulishFont.Regular,
         fontWeight = FontWeight.Normal,
-        fontSize = 14.sp
+        fontSize = 16.sp
     ),
 )
 

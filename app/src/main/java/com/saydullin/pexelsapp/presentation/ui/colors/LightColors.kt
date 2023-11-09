@@ -7,5 +7,5 @@ object LightColors {
     val White = Color(0xFFFFFFFF)
     val Black = Color(0xFF1E1E1E)
     val LightGray = Color(0xFFF3F5F9)
-    val DarkGray = Color(0xFF393939)
+    val DarkGray = Color(0xFF868686)
 }
