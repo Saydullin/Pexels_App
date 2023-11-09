@@ -2,5 +2,6 @@
 <resources>
 
     <dimen name="side_margins">24dp</dimen>
+    <dimen name="corner_radius">50dp</dimen>
 
 </resources>
