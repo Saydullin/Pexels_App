@@ -7,7 +7,7 @@ val LightThemeColors = lightColorScheme(
     primary = LightColors.Red,
     secondary = LightColors.LightGray,
     background = LightColors.White,
-    onSurface = LightColors.Black,
+    onSurface = LightColors.DarkGray,
     onPrimary = LightColors.Black,
     onSecondary = LightColors.Black,
 )
