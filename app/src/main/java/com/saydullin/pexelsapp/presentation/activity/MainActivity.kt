@@ -3,7 +3,7 @@ package com.saydullin.pexelsapp.presentation.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
-import com.saydullin.pexelsapp.presentation.screens.HomeScreen
+import com.saydullin.pexelsapp.presentation.screens.NavController
 import com.saydullin.pexelsapp.presentation.ui.theme.PexelTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             PexelTheme {
-                HomeScreen()
+                NavController()
             }
         }
 
