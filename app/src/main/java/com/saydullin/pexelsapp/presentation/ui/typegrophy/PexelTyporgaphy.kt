@@ -21,6 +21,11 @@ val PexelTypography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),
+    titleMedium = TextStyle(
+        fontFamily = MulishFont.Bold,
+        fontWeight = FontWeight.Bold,
+        fontSize = 16.sp
+    )
 )
 
 

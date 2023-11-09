@@ -8,7 +8,7 @@ val LightThemeColors = lightColorScheme(
     secondary = LightColors.LightGray,
     background = LightColors.White,
     onSurface = LightColors.DarkGray,
-    onPrimary = LightColors.Black,
+    onPrimary = LightColors.White,
     onSecondary = LightColors.Black,
 )
 

@@ -9,3 +9,5 @@ object LightColors {
     val LightGray = Color(0xFFF3F5F9)
     val DarkGray = Color(0xFF868686)
 }
+
+
