@@ -3,13 +3,20 @@ package com.saydullin.pexelsapp.di
 import android.content.Context
 import androidx.room.Room
 import com.saydullin.pexelsapp.api.RetrofitBuilder
+import com.saydullin.pexelsapp.api.service.GetCuratedImagesService
 import com.saydullin.pexelsapp.api.service.GetFeaturedCollectionsService
 import com.saydullin.pexelsapp.data.db.AppDatabase
 import com.saydullin.pexelsapp.data.db.converters.CollectionsFeaturedConverter
+import com.saydullin.pexelsapp.data.db.converters.CuratedImagesConverter
+import com.saydullin.pexelsapp.data.db.dao.CuratedImagesDao
 import com.saydullin.pexelsapp.data.db.dao.FeaturedCollectionsDao
+import com.saydullin.pexelsapp.data.repository.CuratedImagesRepositoryImpl
 import com.saydullin.pexelsapp.data.repository.FeaturedCollectionsRepositoryImpl
-import com.saydullin.pexelsapp.domain.mapper.CollectionFeaturedEntityMapper
-import com.saydullin.pexelsapp.domain.mapper.CollectionFeaturedResponseMapper
+import com.saydullin.pexelsapp.domain.mapper.collectionFeatured.CollectionFeaturedEntityMapper
+import com.saydullin.pexelsapp.domain.mapper.collectionFeatured.CollectionFeaturedResponseMapper
+import com.saydullin.pexelsapp.domain.mapper.curatedImages.CuratedImagesEntityMapper
+import com.saydullin.pexelsapp.domain.mapper.curatedImages.CuratedImagesResponseMapper
+import com.saydullin.pexelsapp.domain.repository.CuratedImagesRepository
 import com.saydullin.pexelsapp.domain.repository.FeaturedCollectionsRepository
 import dagger.Module
 import dagger.Provides
@@ -32,9 +39,8 @@ class DataModule {
             "PexelsDatabase"
         )
             .allowMainThreadQueries()
-            .addTypeConverter(
-                CollectionsFeaturedConverter()
-            )
+            .addTypeConverter(CollectionsFeaturedConverter())
+            .addTypeConverter(CuratedImagesConverter())
             .build()
     }
 
@@ -50,8 +56,20 @@ class DataModule {
 
     @Provides
     @Singleton
+    fun provideCuratedImagesDao(appDatabase: AppDatabase): CuratedImagesDao {
+        return appDatabase.curatedImagesDao()
+    }
+
+    @Provides
+    @Singleton
     fun provideFeaturedCollectionsService(retrofit: Retrofit): GetFeaturedCollectionsService {
         return retrofit.create(GetFeaturedCollectionsService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCuratedImagesService(retrofit: Retrofit): GetCuratedImagesService {
+        return retrofit.create(GetCuratedImagesService::class.java)
     }
 
     @Provides
@@ -67,6 +85,22 @@ class DataModule {
             getFeaturedCollectionsService = getFeaturedCollectionsService,
             collectionFeaturedResponseMapper = collectionFeaturedResponseMapper,
             collectionFeaturedEntityMapper = collectionFeaturedEntityMapper,
+        )
+    }
+
+    @Provides
+    @Singleton
+    fun provideCuratedImagesRepository(
+        curatedImagesDao: CuratedImagesDao,
+        getCuratedImagesService: GetCuratedImagesService,
+        curatedImagesEntityMapper: CuratedImagesEntityMapper,
+        curatedImagesResponseMapper: CuratedImagesResponseMapper,
+    ): CuratedImagesRepository {
+        return CuratedImagesRepositoryImpl(
+            curatedImagesDao = curatedImagesDao,
+            getCuratedImagesService = getCuratedImagesService,
+            curatedImagesEntityMapper = curatedImagesEntityMapper,
+            curatedImagesResponseMapper = curatedImagesResponseMapper,
         )
     }
 
