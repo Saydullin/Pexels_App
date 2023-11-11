@@ -2,10 +2,10 @@ package com.saydullin.pexelsapp.data.repository
 
 import com.saydullin.pexelsapp.api.service.GetFeaturedCollectionsService
 import com.saydullin.pexelsapp.data.db.dao.FeaturedCollectionsDao
-import com.saydullin.pexelsapp.data.model.CollectionFeaturedResponse
-import com.saydullin.pexelsapp.domain.mapper.CollectionFeaturedEntityMapper
-import com.saydullin.pexelsapp.domain.mapper.CollectionFeaturedResponseMapper
-import com.saydullin.pexelsapp.domain.model.CollectionFeatured
+import com.saydullin.pexelsapp.data.model.collectionFeatured.CollectionFeaturedResponse
+import com.saydullin.pexelsapp.domain.mapper.collectionFeatured.CollectionFeaturedEntityMapper
+import com.saydullin.pexelsapp.domain.mapper.collectionFeatured.CollectionFeaturedResponseMapper
+import com.saydullin.pexelsapp.domain.model.collectionFeatured.CollectionFeatured
 import com.saydullin.pexelsapp.domain.repository.FeaturedCollectionsRepository
 import com.saydullin.pexelsapp.domain.utils.Resource
 import com.saydullin.pexelsapp.domain.utils.StatusType

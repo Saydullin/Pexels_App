@@ -1,6 +1,6 @@
 package com.saydullin.pexelsapp.api.service
 
-import com.saydullin.pexelsapp.data.model.CollectionFeaturedResponse
+import com.saydullin.pexelsapp.data.model.collectionFeatured.CollectionFeaturedResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

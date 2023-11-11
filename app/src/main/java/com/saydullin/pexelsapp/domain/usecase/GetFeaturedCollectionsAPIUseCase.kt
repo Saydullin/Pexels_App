@@ -1,6 +1,6 @@
 package com.saydullin.pexelsapp.domain.usecase
 
-import com.saydullin.pexelsapp.domain.model.CollectionFeatured
+import com.saydullin.pexelsapp.domain.model.collectionFeatured.CollectionFeatured
 import com.saydullin.pexelsapp.domain.repository.FeaturedCollectionsRepository
 import com.saydullin.pexelsapp.domain.utils.Resource
 import javax.inject.Inject

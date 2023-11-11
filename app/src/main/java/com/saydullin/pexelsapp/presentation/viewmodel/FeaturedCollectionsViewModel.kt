@@ -5,7 +5,7 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.saydullin.pexelsapp.domain.mapper.CollectionFeaturedMapper
+import com.saydullin.pexelsapp.domain.mapper.collectionFeatured.CollectionFeaturedMapper
 import com.saydullin.pexelsapp.domain.usecase.GetFeaturedCollectionsAPIUseCase
 import com.saydullin.pexelsapp.domain.utils.Resource
 import com.saydullin.pexelsapp.domain.utils.StatusType
