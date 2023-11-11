@@ -8,14 +8,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.saydullin.pexelsapp.R
 import com.saydullin.pexelsapp.presentation.components.FeaturedList
+import com.saydullin.pexelsapp.presentation.components.ImagesList
 import com.saydullin.pexelsapp.presentation.components.SearchBar
+import com.saydullin.pexelsapp.presentation.viewmodel.CuratedImagesViewModel
 import com.saydullin.pexelsapp.presentation.viewmodel.FeaturedCollectionsViewModel
 
 @Composable
-fun HomeScreen(viewModel: FeaturedCollectionsViewModel = hiltViewModel()) {
+fun HomeScreen(
+    featuredCollectionVM: FeaturedCollectionsViewModel = hiltViewModel(),
+    curatedImagesVM: CuratedImagesViewModel = hiltViewModel(),
+) {
 
     LaunchedEffect(Unit) {
-        viewModel.execute()
+        featuredCollectionVM.execute()
+        curatedImagesVM.execute()
     }
 
     Surface {
@@ -24,6 +30,7 @@ fun HomeScreen(viewModel: FeaturedCollectionsViewModel = hiltViewModel()) {
                 searchPlaceholder = stringResource(R.string.search),
             )
             FeaturedList()
+            ImagesList()
         }
     }
 
