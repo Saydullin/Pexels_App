@@ -3,7 +3,7 @@ package com.saydullin.pexelsapp.data.db.dao
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.saydullin.pexelsapp.data.db.entities.CollectionFeaturedEntity
+import com.saydullin.pexelsapp.data.db.entities.collectionFeatured.CollectionFeaturedEntity
 
 @Dao
 interface FeaturedCollectionsDao {

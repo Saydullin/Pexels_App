@@ -3,5 +3,6 @@
 
     <dimen name="side_margins">24dp</dimen>
     <dimen name="corner_radius">50dp</dimen>
+    <dimen name="images_radius">20dp</dimen>
 
 </resources>

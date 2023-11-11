@@ -33,7 +33,7 @@ fun FeaturedList(
         horizontalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         items(featuredList) { featured ->
-            val isActive = featured == featuredList.first()
+            val isActive = featured == featuredList.firstOrNull()
 
             Container(
                 isActive = isActive,
@@ -43,9 +43,9 @@ fun FeaturedList(
                         Toast.makeText(context, featured.title, Toast.LENGTH_SHORT).show()
                     },
                 innerPadding = PaddingValues(
-                    start = if (featured == featuredList.first())
+                    start = if (featured == featuredList.firstOrNull())
                         dimensionResource(R.dimen.side_margins) else 0.dp,
-                    end = if (featured == featuredList.last())
+                    end = if (featured == featuredList.lastOrNull())
                         dimensionResource(R.dimen.side_margins) else 0.dp
                 ),
             ) {
