@@ -1,4 +1,4 @@
-package com.saydullin.pexelsapp.data.db.entities
+package com.saydullin.pexelsapp.data.db.entities.collectionFeatured
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

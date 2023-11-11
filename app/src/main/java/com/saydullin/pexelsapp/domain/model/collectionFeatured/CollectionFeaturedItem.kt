@@ -1,4 +1,4 @@
-package com.saydullin.pexelsapp.domain.model
+package com.saydullin.pexelsapp.domain.model.collectionFeatured
 
 data class CollectionFeaturedItem(
     val id: String,

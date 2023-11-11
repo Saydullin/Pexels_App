@@ -1,4 +1,4 @@
-package com.saydullin.pexelsapp.data.model
+package com.saydullin.pexelsapp.data.model.collectionFeatured
 
 import com.google.gson.annotations.SerializedName
 

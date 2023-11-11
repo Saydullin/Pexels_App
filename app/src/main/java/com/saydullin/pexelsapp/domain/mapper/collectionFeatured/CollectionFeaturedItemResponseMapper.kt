@@ -1,9 +1,8 @@
-package com.saydullin.pexelsapp.domain.mapper
+package com.saydullin.pexelsapp.domain.mapper.collectionFeatured
 
-import com.saydullin.pexelsapp.data.model.CollectionFeaturedItemResponse
-import com.saydullin.pexelsapp.data.model.CollectionFeaturedResponse
-import com.saydullin.pexelsapp.domain.model.CollectionFeatured
-import com.saydullin.pexelsapp.domain.model.CollectionFeaturedItem
+import com.saydullin.pexelsapp.data.model.collectionFeatured.CollectionFeaturedItemResponse
+import com.saydullin.pexelsapp.domain.mapper.Mapper
+import com.saydullin.pexelsapp.domain.model.collectionFeatured.CollectionFeaturedItem
 import javax.inject.Inject
 
 class CollectionFeaturedItemResponseMapper @Inject constructor():

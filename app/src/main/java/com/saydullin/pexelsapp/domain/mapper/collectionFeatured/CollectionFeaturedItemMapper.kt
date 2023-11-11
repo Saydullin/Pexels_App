@@ -1,6 +1,7 @@
-package com.saydullin.pexelsapp.domain.mapper
+package com.saydullin.pexelsapp.domain.mapper.collectionFeatured
 
-import com.saydullin.pexelsapp.domain.model.CollectionFeaturedItem
+import com.saydullin.pexelsapp.domain.mapper.Mapper
+import com.saydullin.pexelsapp.domain.model.collectionFeatured.CollectionFeaturedItem
 import com.saydullin.pexelsapp.presentation.models.CollectionFeaturedItemUI
 import javax.inject.Inject
 
