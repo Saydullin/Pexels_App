@@ -2,12 +2,12 @@ package com.saydullin.pexelsapp.presentation.screens
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Scaffold
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -47,6 +47,11 @@ fun NavController() {
                                     painterResource(screen.icon)
                                 },
                                 contentDescription = screen.title,
+                                tint = if (isSelected) {
+                                    MaterialTheme.colorScheme.primary
+                                } else {
+                                    MaterialTheme.colorScheme.onSurface
+                                }
                             )
                         },
                         selected = isSelected,
@@ -58,10 +63,9 @@ fun NavController() {
             }
         }
     ) { padding ->
-        Spacer(modifier = Modifier
-            .padding(padding)
-        )
         NavHost(
+            modifier = Modifier
+                .padding(bottom = padding.calculateBottomPadding()),
             navController = navController,
             startDestination = "home"
         ) {

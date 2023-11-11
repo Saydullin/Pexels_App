@@ -12,13 +12,13 @@ sealed class Screen(
         route = "home",
         title = "Home",
         icon = R.drawable.home_icon,
-        activeIcon = R.drawable.home_icon_active
+        activeIcon = R.drawable.home_screen_active
     )
     object Bookmark : Screen(
         route = "bookmark",
         title = "Bookmark",
         icon = R.drawable.bookmark_icon,
-        activeIcon = R.drawable.bookmark_icon_active
+        activeIcon = R.drawable.bookmark_screen_active
     )
 }
 
