@@ -1,6 +1,8 @@
 package com.saydullin.pexelsapp.di
 
+import com.saydullin.pexelsapp.domain.repository.CuratedImagesRepository
 import com.saydullin.pexelsapp.domain.repository.FeaturedCollectionsRepository
+import com.saydullin.pexelsapp.domain.usecase.GetCuratedImagesAPIUseCase
 import com.saydullin.pexelsapp.domain.usecase.GetFeaturedCollectionsAPIUseCase
 import dagger.Module
 import dagger.Provides
@@ -16,6 +18,13 @@ class DomainModule {
         featuredCollectionsRepository: FeaturedCollectionsRepository,
     ): GetFeaturedCollectionsAPIUseCase {
         return GetFeaturedCollectionsAPIUseCase(featuredCollectionsRepository)
+    }
+
+    @Provides
+    fun providesGetCuratedImagesAPIUseCase(
+        curatedImagesRepository: CuratedImagesRepository,
+    ): GetCuratedImagesAPIUseCase {
+        return GetCuratedImagesAPIUseCase(curatedImagesRepository)
     }
 
 }
